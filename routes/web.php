@@ -14,6 +14,7 @@ Route::post('/cart/add/{id}', [CartController::class, 'add'])->name("cart.add");
 
 Route::middleware('auth')->group(function () {
     Route::get('/cart/purchase', [CartController::class, 'purchase'])->name("cart.purchase");
+    Route::get('/my-account/orders', 'App\Http\Controllers\MyAccountController@orders')->name("myaccount.orders");
 });
 
 Route::middleware('admin')->group(function () {
